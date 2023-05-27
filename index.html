@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Jehoiachin.</a>
+
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="home-content">
+            <h1 class="animate__animated animate__slideInDown">Hi, I'm <span class="user">Jehoiachin Katemangwe</span>
+            </h1>
+            <h3>Software Developer</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rem inventore eum quis enim neque
+                ratione.
+                Quibusdam praesentium molestias eum, exercitationem ducimus voluptas nulla nesciunt quasi sit architecto
+                enim
+                laudantium?</p>
+            <div class="btn-box">
+                <a
+                    href="mailto:jehoiachinkatemangwe1@gmail.com?subject=Enter%20Subject&body=Dear%20recipient%2C%0A%0AI%20hope%20this%20email%20finds%20you%20well.%0A%0ABest%20regards%2C%0AYour%20Name">Hire
+                    Me</a>
+                <a href="#contact">Let's Talk</a>
+            </div>
+        </div>
+
+        <div class="home-social">
+            <a href="https://www.linkedin.com/in/jkatemangwe/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/JehkTech"><i class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/_jeh.k/"><i class='bx bxl-instagram'></i></a>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="gallery">
+            <a href="https://github.com/JehkTech?tab=repositories"><img src="project1.jpg" alt="Project 1">Lorem ipsum
+                dolor sit amet consectetur adipisicing elit.
+                Cumque rem inventore eum quis enim neque ratione.
+                Quibusdam praesentium molestias eum, exercitationem ducimus voluptas nulla nesciunt quasi sit architecto
+                enim
+                laudantium</a>
+            <a href="https://github.com/JehkTech?tab=repositories"><img src="project2.jpg" alt="Project 2">Lorem ipsum
+                dolor sit amet consectetur adipisicing elit.
+                Cumque rem inventore eum quis enim neque ratione.
+                Quibusdam praesentium molestias eum, exercitationem ducimus voluptas nulla nesciunt quasi sit architecto
+                enim
+                laudantium</a>
+            <a href="https://github.com/JehkTech?tab=repositories"><img src="project3.jpg" alt="Project 3">Lorem ipsum
+                dolor sit amet consectetur adipisicing elit.
+                Cumque rem inventore eum quis enim neque ratione.
+                Quibusdam praesentium molestias eum, exercitationem ducimus voluptas nulla nesciunt quasi sit architecto
+                enim
+                laudantium</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <h3 class="animate__animated animate__backInUp">Get In Touch</h3>
+        <form id="input-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit" onclick="sendEmail()">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy 2023, Designed and Maintained by Jehoiachin Katemangwe</p>
+    </footer>
+    <button id="back-to-top">↑</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var backToTopButton = document.getElementById("back-to-top");
+
+            window.addEventListener("scroll", function () {
+                if (window.pageYOffset > 100) {
+                    backToTopButton.style.display = "block";
+                } else {
+                    backToTopButton.style.display = "none";
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+
+            function sendEmail() {
+                var email = 'jehoiachinkatemangwe1@gmail.com';
+                var subject = 'Contact Form Submission';
+                var name = document.getElementById('name').value;
+                var senderEmail = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+
+                var body = 'Name: ' + name + '\n';
+                body += 'Email: ' + senderEmail + '\n';
+                body += 'Message: ' + message;
+
+                var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+                window.location.href = mailtoLink;
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
